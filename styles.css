@@ -20,8 +20,8 @@
   --text-muted: #6B6B6B;
   --border: rgba(21, 57, 45, 0.12);
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
 
   --radius: 4px;
   --radius-lg: 10px;
@@ -70,13 +70,15 @@ input, textarea, select { font-family: inherit; }
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 400;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
   color: var(--pine);
   margin-bottom: 20px;
 }
 .section-title em {
-  font-style: italic;
+  font-style: normal;
   color: var(--bronze);
 }
 .section-desc {
@@ -97,8 +99,9 @@ input, textarea, select { font-family: inherit; }
   padding: 14px 32px;
   border-radius: var(--radius);
   font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   transition: var(--transition);
   cursor: pointer;
 }
@@ -164,7 +167,7 @@ input, textarea, select { font-family: inherit; }
 .nav__logo-n {
   font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--bronze);
   line-height: 1;
 }
@@ -172,9 +175,10 @@ input, textarea, select { font-family: inherit; }
 .nav__logo-brand {
   font-family: var(--font-display);
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--white);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   line-height: 1;
   transition: color var(--transition);
 }
@@ -184,7 +188,7 @@ input, textarea, select { font-family: inherit; }
   font-size: 0.6rem;
   letter-spacing: 0.2em;
   color: var(--sand);
-  font-weight: 500;
+  font-weight: 600;
   transition: color var(--transition);
 }
 .nav.scrolled .nav__logo-sub { color: var(--text-muted); }
@@ -194,10 +198,11 @@ input, textarea, select { font-family: inherit; }
   gap: 36px;
 }
 .nav__link {
-  font-size: 0.88rem;
-  font-weight: 400;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: rgba(255,255,255,0.85);
-  letter-spacing: 0.04em;
   transition: color var(--transition);
   position: relative;
 }
@@ -205,7 +210,7 @@ input, textarea, select { font-family: inherit; }
   content: '';
   position: absolute;
   bottom: -3px; left: 0; right: 100%;
-  height: 1px;
+  height: 2px;
   background: var(--bronze);
   transition: right var(--transition);
 }
@@ -218,9 +223,10 @@ input, textarea, select { font-family: inherit; }
   background: var(--bronze);
   color: var(--white);
   border-radius: var(--radius);
-  font-size: 0.88rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   transition: var(--transition);
 }
 .nav__cta:hover {
@@ -286,14 +292,14 @@ input, textarea, select { font-family: inherit; }
 .hero__content {
   position: relative;
   z-index: 2;
-  max-width: 680px;
+  max-width: 720px;
   padding: 120px 24px 80px;
   padding-left: max(24px, calc((100vw - var(--container)) / 2 + 24px));
 }
 .hero__eyebrow {
   font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--bronze-light);
   margin-bottom: 24px;
@@ -305,24 +311,25 @@ input, textarea, select { font-family: inherit; }
   content: '';
   display: block;
   width: 32px;
-  height: 1px;
+  height: 2px;
   background: var(--bronze);
 }
 .hero__headline {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 300;
-  line-height: 1.06;
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.95;
   color: var(--white);
   margin-bottom: 28px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 .hero__headline em {
-  font-style: italic;
+  font-style: normal;
   color: var(--bronze-light);
 }
 .hero__sub {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: rgba(255,255,255,0.72);
   margin-bottom: 48px;
   max-width: 460px;
@@ -353,9 +360,10 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
   gap: 10px;
   color: rgba(255,255,255,0.4);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  font-weight: 600;
 }
 .hero__scroll-line {
   width: 1px;
@@ -383,23 +391,25 @@ input, textarea, select { font-family: inherit; }
 }
 .stats__item { text-align: center; padding: 12px 24px; }
 .stats__item p {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 0.06em;
-  margin-top: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
 }
 .stats__num {
   font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-weight: 300;
+  font-size: 3rem;
+  font-weight: 700;
   color: var(--white);
   line-height: 1;
 }
 .stats__plus, .stats__pct {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--bronze-light);
-  font-weight: 300;
+  font-weight: 700;
 }
 .stats__star { font-size: 1.6rem; color: var(--bronze-light); }
 .stats__divider {
@@ -432,7 +442,7 @@ input, textarea, select { font-family: inherit; }
   content: '';
   position: absolute;
   bottom: 0; left: 36px; right: 36px;
-  height: 2px;
+  height: 3px;
   background: var(--bronze);
   transform: scaleX(0);
   transition: transform var(--transition);
@@ -448,8 +458,10 @@ input, textarea, select { font-family: inherit; }
 }
 .service-card h3 {
   font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: var(--pine);
   margin-bottom: 12px;
 }
@@ -460,10 +472,11 @@ input, textarea, select { font-family: inherit; }
   margin-bottom: 20px;
 }
 .service-card__link {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--bronze);
-  letter-spacing: 0.04em;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -513,7 +526,7 @@ input, textarea, select { font-family: inherit; }
 .why__card-lines div:nth-child(5) { width: 40%; }
 .why__card--front {
   top: 0; left: 0; right: 24px; bottom: 24px;
- background: url(img/8.webp);
+  background: url(img/8.webp);
   color: var(--white);
   display: flex;
   flex-direction: column;
@@ -527,23 +540,25 @@ input, textarea, select { font-family: inherit; }
 }
 .why__card--front h4 {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 400;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   margin-bottom: 12px;
 }
 .why__card--front p {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-style: italic;
-  color: rgba(255,255,255,0.7);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
   line-height: 1.65;
 }
 .why__card-sig {
   margin-top: 20px;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--bronze-light);
-  font-weight: 500;
+  font-weight: 700;
 }
 .why__badge {
   position: absolute;
@@ -560,8 +575,8 @@ input, textarea, select { font-family: inherit; }
 }
 .why__badge-num {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: var(--pine);
   line-height: 1;
 }
@@ -572,8 +587,10 @@ input, textarea, select { font-family: inherit; }
 }
 .why__badge small {
   font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--text-muted);
-  letter-spacing: 0.08em;
   margin-top: 2px;
 }
 .why__desc {
@@ -592,16 +609,18 @@ input, textarea, select { font-family: inherit; }
 .why__list-dot {
   flex-shrink: 0;
   width: 8px; height: 8px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--bronze);
   margin-top: 7px;
 }
 .why__list li strong {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--pine);
   margin-bottom: 4px;
-  font-weight: 600;
 }
 .why__list li span {
   font-size: 0.9rem;
@@ -628,7 +647,7 @@ input, textarea, select { font-family: inherit; }
 .gallery__col .gallery__item { flex: 1; min-height: 0; }
 .gallery__item {
   position: relative;
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
   background: var(--sand);
   cursor: pointer;
@@ -657,7 +676,7 @@ input, textarea, select { font-family: inherit; }
 .gallery__zoom {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.92);
   color: var(--pine);
   border: none;
@@ -675,15 +694,16 @@ input, textarea, select { font-family: inherit; }
   position: absolute;
   bottom: 12px;
   left: 12px;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.92);
   background: rgba(13, 38, 30, 0.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 4px 10px;
-  border-radius: 3px;
+  border-radius: 2px;
   pointer-events: none;
   transition: opacity 0.25s ease;
 }
@@ -696,7 +716,7 @@ input, textarea, select { font-family: inherit; }
 }
 .gallery__note a {
   color: var(--bronze);
-  font-weight: 500;
+  font-weight: 600;
   transition: color var(--transition);
 }
 .gallery__note a:hover { color: var(--bronze-dark); }
@@ -727,14 +747,15 @@ input, textarea, select { font-family: inherit; }
   max-width: 90vw;
   max-height: 80vh;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 2px;
   display: block;
 }
 .lightbox__caption {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
   text-align: center;
 }
 .lightbox__counter {
@@ -742,15 +763,17 @@ input, textarea, select { font-family: inherit; }
   top: 24px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.35);
-  letter-spacing: 0.12em;
 }
 .lightbox__close {
   position: absolute;
   top: 20px; right: 24px;
   width: 40px; height: 40px;
-  border-radius: 50%;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.4rem;
@@ -769,7 +792,7 @@ input, textarea, select { font-family: inherit; }
   top: 50%;
   transform: translateY(-50%);
   width: 48px; height: 48px;
-  border-radius: 50%;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.7);
@@ -795,15 +818,15 @@ input, textarea, select { font-family: inherit; }
 .testimonials .section-title em { color: var(--bronze-light); }
 .testimonials__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   margin-bottom: 48px;
 }
 .testimonial-card {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius-lg);
-  padding: 40px 36px;
+  padding: 36px 32px;
   transition: var(--transition);
 }
 .testimonial-card:hover {
@@ -816,16 +839,16 @@ input, textarea, select { font-family: inherit; }
 }
 .testimonial-card--featured:hover { background: var(--bronze-dark); }
 .testimonial-card__stars {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--bronze-light);
   letter-spacing: 3px;
   margin-bottom: 20px;
 }
 .testimonial-card--featured .testimonial-card__stars { color: rgba(255,255,255,0.9); }
 .testimonial-card__quote {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-style: italic;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-style: normal;
   color: rgba(255,255,255,0.8);
   line-height: 1.7;
   margin-bottom: 28px;
@@ -834,15 +857,15 @@ input, textarea, select { font-family: inherit; }
 .testimonial-card__author { display: flex; align-items: center; gap: 14px; }
 .testimonial-card__avatar {
   width: 42px; height: 42px;
-  border-radius: 50%;
+  border-radius: 0;
   background: rgba(164,124,75,0.25);
   color: var(--bronze-light);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: 0.05em;
   flex-shrink: 0;
 }
 .testimonial-card--featured .testimonial-card__avatar {
@@ -851,12 +874,14 @@ input, textarea, select { font-family: inherit; }
 }
 .testimonial-card__author strong {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--white);
-  font-weight: 600;
 }
 .testimonial-card__author span {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: rgba(255,255,255,0.5);
 }
 .testimonials__google {
@@ -865,7 +890,8 @@ input, textarea, select { font-family: inherit; }
   justify-content: center;
   gap: 12px;
   color: rgba(255,255,255,0.55);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 .testimonials__google strong { color: var(--white); }
 
@@ -900,13 +926,15 @@ input, textarea, select { font-family: inherit; }
 .quote-cta__title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--white);
   margin-bottom: 20px;
 }
 .quote-cta__title em {
-  font-style: italic;
+  font-style: normal;
   color: var(--bronze-light);
 }
 .quote-cta__content > p {
@@ -924,7 +952,8 @@ input, textarea, select { font-family: inherit; }
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: rgba(255,255,255,0.8);
 }
 .quote-cta__perks li svg { color: var(--bronze-light); flex-shrink: 0; }
@@ -935,17 +964,19 @@ input, textarea, select { font-family: inherit; }
   text-align: center;
 }
 .quote-cta__card-label {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--bronze);
   margin-bottom: 8px;
 }
 .quote-cta__card h3 {
   font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--pine);
   margin-bottom: 24px;
 }
@@ -953,19 +984,21 @@ input, textarea, select { font-family: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 700;
   color: var(--pine);
   margin-bottom: 20px;
+  letter-spacing: 0.02em;
   transition: color var(--transition);
 }
 .quote-cta__phone:hover { color: var(--bronze); }
 .quote-cta__divider {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: var(--text-muted);
   margin: 20px 0;
   position: relative;
 }
@@ -982,9 +1015,11 @@ input, textarea, select { font-family: inherit; }
 .quote-cta__divider::after { right: 0; }
 .quote-cta__hours {
   margin-top: 16px;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--text-muted);
-  letter-spacing: 0.06em;
 }
 
 /* ── CONTACT ── */
@@ -1024,9 +1059,11 @@ input, textarea, select { font-family: inherit; }
 }
 .contact__detail strong {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--pine);
-  font-weight: 600;
 }
 .contact__detail span { font-size: 0.82rem; color: var(--text-muted); }
 .contact__form-wrap {
@@ -1039,10 +1076,11 @@ input, textarea, select { font-family: inherit; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { display: flex; flex-direction: column; gap: 7px; }
 .form-group label {
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--pine);
-  letter-spacing: 0.04em;
 }
 .form-group input,
 .form-group textarea,
@@ -1095,15 +1133,17 @@ input, textarea, select { font-family: inherit; }
 .footer__logo-n {
   font-family: var(--font-display);
   font-size: 2.2rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--bronze);
   line-height: 1;
 }
 .footer__logo-name {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--white);
   line-height: 1;
 }
@@ -1112,7 +1152,7 @@ input, textarea, select { font-family: inherit; }
   font-size: 0.58rem;
   letter-spacing: 0.22em;
   color: rgba(255,255,255,0.4);
-  font-weight: 500;
+  font-weight: 600;
 }
 .footer__tagline {
   font-size: 0.88rem;
@@ -1125,7 +1165,7 @@ input, textarea, select { font-family: inherit; }
 .footer__social-link {
   width: 36px; height: 36px;
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius);
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1134,9 +1174,9 @@ input, textarea, select { font-family: inherit; }
 }
 .footer__social-link:hover { border-color: var(--bronze); color: var(--bronze); }
 .footer__col h4 {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
   margin-bottom: 20px;
@@ -1158,14 +1198,19 @@ input, textarea, select { font-family: inherit; }
   gap: 16px;
   flex-wrap: wrap;
 }
-.footer__bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+.footer__bottom p {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.3);
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .services__grid { grid-template-columns: repeat(2, 1fr); }
   .why__inner { grid-template-columns: 1fr; }
   .why__visual { display: none; }
-  .testimonials__grid { grid-template-columns: 1fr; gap: 16px; }
+  .testimonials__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .contact__inner { grid-template-columns: 1fr; gap: 48px; }
   .quote-cta__inner { grid-template-columns: 1fr; gap: 48px; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
@@ -1204,6 +1249,8 @@ input, textarea, select { font-family: inherit; }
 
   .services__grid { grid-template-columns: 1fr; }
   .service-card { padding: 32px 28px; }
+
+  .testimonials__grid { grid-template-columns: 1fr; }
 
   .form-row { grid-template-columns: 1fr; }
   .contact__form-wrap { padding: 32px 24px; }
