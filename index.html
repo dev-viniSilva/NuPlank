@@ -93,10 +93,64 @@
     </div>
   </section>
 
+  <!-- ░░ BRAND STRIP — scrolling logo ticker ░░ -->
+  <div class="brand-strip">
+    <div class="brand-strip__track">
+      <!-- repeated 4x so it scrolls seamlessly -->
+      <div class="brand-strip__item">
+        <img src="img/logo.jpg" alt="" class="brand-strip__logo" />
+        <span class="brand-strip__text">NuPlank Flooring</span>
+      </div>
+      <div class="brand-strip__item">
+        <span class="brand-strip__text">Licensed &amp; Insured</span>
+      </div>
+      <div class="brand-strip__item">
+        <img src="img/logo.jpg" alt="" class="brand-strip__logo" />
+        <span class="brand-strip__text">Long Branch, NJ</span>
+      </div>
+      <div class="brand-strip__item">
+        <span class="brand-strip__text">5.0 ★ Google Rating</span>
+      </div>
+      <div class="brand-strip__item">
+        <img src="img/logo.jpg" alt="" class="brand-strip__logo" />
+        <span class="brand-strip__text">NJ · NY · PA</span>
+      </div>
+      <div class="brand-strip__item">
+        <span class="brand-strip__text">500+ Projects</span>
+      </div>
+      <!-- duplicate for seamless loop -->
+      <div class="brand-strip__item">
+        <img src="img/logo.jpg" alt="" class="brand-strip__logo" />
+        <span class="brand-strip__text">NuPlank Flooring</span>
+      </div>
+      <div class="brand-strip__item">
+        <span class="brand-strip__text">Licensed &amp; Insured</span>
+      </div>
+      <div class="brand-strip__item">
+        <img src="img/logo.jpg" alt="" class="brand-strip__logo" />
+        <span class="brand-strip__text">Long Branch, NJ</span>
+      </div>
+      <div class="brand-strip__item">
+        <span class="brand-strip__text">5.0 ★ Google Rating</span>
+      </div>
+      <div class="brand-strip__item">
+        <img src="img/logo.jpg" alt="" class="brand-strip__logo" />
+        <span class="brand-strip__text">NJ · NY · PA</span>
+      </div>
+      <div class="brand-strip__item">
+        <span class="brand-strip__text">500+ Projects</span>
+      </div>
+    </div>
+  </div>
+
   <!-- ░░ SERVICES ░░ -->
   <section class="services" id="services">
     <div class="container">
       <div class="section-header reveal">
+        <!-- Logo watermark above section header -->
+        <div class="section-logo-mark section-logo-mark--dark">
+          <img src="img/logo.jpg" alt="NuPlank" onerror="this.parentElement.style.display='none'" />
+        </div>
         <span class="section-tag">What We Do</span>
         <h2 class="section-title">Craftsmanship in<br/><em>Every Plank</em></h2>
         <p class="section-desc">From first assessment to final finish, we deliver flooring solutions built to last — and built to impress.</p>
@@ -179,6 +233,14 @@
           </div>
         </div>
         <div class="why__content reveal">
+          <!-- Logo badge in Why section -->
+          <div class="cta-logo-badge">
+            <img src="img/logo.jpg" alt="NuPlank" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+            <div class="cta-logo-badge__fallback" style="display:none">
+              <span class="cta-logo-badge__n">N</span>
+              <span class="cta-logo-badge__name">NuPlank</span>
+            </div>
+          </div>
           <span class="section-tag">Why NuPlank</span>
           <h2 class="section-title">The Difference Is in<br/><em>The Details</em></h2>
           <p class="why__desc">Most flooring contractors focus on speed. We focus on quality — because we know you'll live with these floors for decades.</p>
@@ -222,6 +284,10 @@
   <section class="gallery" id="gallery">
     <div class="container">
       <div class="section-header reveal">
+        <!-- Logo watermark above gallery header -->
+        <div class="section-logo-mark">
+          <img src="img/logo.jpg" alt="NuPlank" onerror="this.parentElement.style.display='none'" />
+        </div>
         <span class="section-tag">Our Work</span>
         <h2 class="section-title">Floors We're<br/><em>Proud Of</em></h2>
       </div>
@@ -379,7 +445,7 @@
         </div>
         <div class="testimonial-card reveal">
           <div class="testimonial-card__stars">★★★★★</div>
-          <p class="testimonial-card__quote">"Eddy is an excellent installer with many years of experience. He’s a hardworking professional, very skilled, and always easy to work with. Reliable, respectful, and dedicated to delivering great results. Keep up the great work, Eddy!"</p>
+          <p class="testimonial-card__quote">"Eddy is an excellent installer with many years of experience. He's a hardworking professional, very skilled, and always easy to work with. Reliable, respectful, and dedicated to delivering great results. Keep up the great work, Eddy!"</p>
           <div class="testimonial-card__author">
             <div class="testimonial-card__avatar">E</div>
             <div>
@@ -402,6 +468,14 @@
     <div class="container">
       <div class="quote-cta__inner reveal">
         <div class="quote-cta__content">
+          <!-- Logo badge in CTA -->
+          <div class="cta-logo-badge">
+            <img src="img/logo.jpg" alt="NuPlank" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+            <div class="cta-logo-badge__fallback" style="display:none">
+              <span class="cta-logo-badge__n">N</span>
+              <span class="cta-logo-badge__name">NuPlank</span>
+            </div>
+          </div>
           <span class="section-tag">Free Estimate</span>
           <h2 class="quote-cta__title">Every Project Gets a<br/><em>Custom Quote</em></h2>
           <p>No price lists, no guesswork. We visit your space, measure it properly, and give you a clear number — free of charge and with zero pressure.</p>
@@ -520,6 +594,17 @@
   <!-- ░░ FOOTER ░░ -->
   <footer class="footer">
     <div class="container">
+      <!-- Big logo hero at top of footer -->
+      <div class="footer__logo-hero">
+        <img src="img/logo.jpg" alt="NuPlank Flooring" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+        <div class="footer__logo-hero-fallback" style="display:none">
+          <span class="footer__logo-hero-n">N</span>
+          <div class="footer__logo-hero-text">
+            <span class="footer__logo-hero-name">NuPlank</span>
+            <span class="footer__logo-hero-sub">Flooring</span>
+          </div>
+        </div>
+      </div>
       <div class="footer__inner">
         <div class="footer__brand">
           <div class="footer__logo">
