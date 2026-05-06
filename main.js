@@ -1,3 +1,4 @@
+
 /* =============================================
    NUPLANK FLOORING — main.js
    ============================================= */
@@ -25,11 +26,9 @@
     const isOpen = navLinks.classList.contains('open');
     hamburger.setAttribute('aria-expanded', isOpen);
   });
-  // Close on link click
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => navLinks.classList.remove('open'));
   });
-  // Close on outside click
   document.addEventListener('click', e => {
     if (!nav.contains(e.target)) navLinks.classList.remove('open');
   });
@@ -38,9 +37,8 @@
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Stagger siblings
           const siblings = entry.target.parentElement.querySelectorAll('.reveal');
           let delay = 0;
           siblings.forEach((sib, idx) => {
@@ -65,7 +63,6 @@
     function tick(now) {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       el.textContent = Math.floor(eased * target);
       if (progress < 1) requestAnimationFrame(tick);
@@ -90,7 +87,7 @@
   );
   if (statsSection) statsObserver.observe(statsSection);
 
-  // ── SMOOTH SCROLL FOR ANCHORS ──
+  // ── SMOOTH SCROLL ──
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
@@ -103,16 +100,62 @@
     });
   });
 
+  // ── BEFORE / AFTER SLIDERS ──
+  document.querySelectorAll('[data-slider]').forEach(slider => {
+    const clip   = slider.querySelector('[data-clip]');
+    const handle = slider.querySelector('[data-handle]');
+    const after  = slider.querySelector('.ba__img--after');
+
+    let dragging = false;
+    let pct = 50; // start position %
+
+    function setPosition(x) {
+      const rect = slider.getBoundingClientRect();
+      let ratio = (x - rect.left) / rect.width;
+      ratio = Math.max(0.04, Math.min(0.96, ratio));
+      pct = ratio * 100;
+      after.style.clipPath  = `inset(0 ${100 - pct}% 0 0)`;
+      handle.style.left     = `${pct}%`;
+    }
+
+    // Initialize
+    after.style.clipPath = 'inset(0 50% 0 0)';
+    handle.style.left    = '50%';
+    handle.style.transform = 'translateX(-50%)';
+
+    // Mouse
+    slider.addEventListener('mousedown', e => {
+      dragging = true;
+      setPosition(e.clientX);
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', e => {
+      if (!dragging) return;
+      setPosition(e.clientX);
+    });
+    window.addEventListener('mouseup', () => { dragging = false; });
+
+    // Touch
+    slider.addEventListener('touchstart', e => {
+      dragging = true;
+      setPosition(e.touches[0].clientX);
+    }, { passive: true });
+    slider.addEventListener('touchmove', e => {
+      if (!dragging) return;
+      setPosition(e.touches[0].clientX);
+    }, { passive: true });
+    slider.addEventListener('touchend', () => { dragging = false; });
+  });
+
   // ── FORM HANDLING ──
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
+      const btn  = form.querySelector('button[type="submit"]');
       const span = btn.querySelector('span');
       const original = span.textContent;
 
-      // Validate required fields
       let valid = true;
       form.querySelectorAll('[required]').forEach(field => {
         field.style.borderColor = '';
@@ -122,12 +165,8 @@
           field.addEventListener('input', () => { field.style.borderColor = ''; }, { once: true });
         }
       });
-      if (!valid) {
-        shakeForm(form);
-        return;
-      }
+      if (!valid) { shakeForm(form); return; }
 
-      // Simulate submission
       btn.disabled = true;
       span.textContent = 'Sending…';
       setTimeout(() => {
@@ -150,7 +189,6 @@
     el.addEventListener('animationend', () => { el.style.animation = ''; }, { once: true });
   }
 
-  // Inject shake keyframes
   const style = document.createElement('style');
   style.textContent = `
     @keyframes shake {
@@ -164,8 +202,8 @@
   document.head.appendChild(style);
 
   // ── ACTIVE NAV LINK HIGHLIGHTING ──
-  const sections = document.querySelectorAll('section[id]');
-  const navLinkEls = document.querySelectorAll('.nav__link');
+  const sections    = document.querySelectorAll('section[id]');
+  const navLinkEls  = document.querySelectorAll('.nav__link');
 
   function updateActiveLink() {
     const scrollY = window.scrollY + nav.offsetHeight + 40;
@@ -175,9 +213,7 @@
     });
     navLinkEls.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active');
-      }
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
     });
   }
   window.addEventListener('scroll', updateActiveLink, { passive: true });
@@ -187,7 +223,7 @@
     card.addEventListener('mousemove', function (e) {
       const rect = card.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
-      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 8;
+      const y = ((e.clientY - rect.top)  / rect.height - 0.5) * 8;
       card.style.transform = `perspective(800px) rotateX(${-y}deg) rotateY(${x}deg) translateY(-4px)`;
     });
     card.addEventListener('mouseleave', function () {
@@ -210,8 +246,8 @@
     });
   }, { threshold: 0.2 });
   pricingCards.forEach((card, i) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(24px)';
+    card.style.opacity    = '0';
+    card.style.transform  = 'translateY(24px)';
     card.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`;
     pricingObserver.observe(card);
   });
